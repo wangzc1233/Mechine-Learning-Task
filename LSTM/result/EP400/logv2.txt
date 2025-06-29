@@ -1,0 +1,509 @@
+nohup: ignoring input
+=== LSTM电力预测系统 - 改进版 ===
+全局参数配置:
+模型参数: {'seq_length': 50, 'hidden_size': 128, 'num_layers': 2, 'dropout': 0.2, 'learning_rate': 0.005, 'batch_size': 32, 'epochs_short': 400, 'epochs_long': 400}
+训练参数: {'val_split_ratio': 0.1, 'num_experiments': 5, 'random_seed': 42, 'prediction_days_short': 90, 'prediction_days_long': 365}
+数据路径: {'train_path': 'data/train_processed_data.csv', 'test_path': 'data/test_processed_data.csv'}
+使用设备: cuda
+正在加载数据...
+原始训练集大小: 746
+测试集大小: 687
+特征列: ['Global_reactive_power', 'Voltage', 'Global_intensity', 'Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3', 'RR', 'NBJRR1', 'NBJRR5', 'NBJRR10', 'NBJBROU', 'Sub_metering_remainder']
+训练集大小: 671
+验证集大小: 75
+输入特征维度: 12
+开始进行5次实验...
+
+=== 实验 1/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.008847, Val Loss: 0.012886
+Epoch [20/400], Train Loss: 0.010108, Val Loss: 0.013617
+Epoch [30/400], Train Loss: 0.006564, Val Loss: 0.015382
+Epoch [40/400], Train Loss: 0.005686, Val Loss: 0.015553
+Epoch [50/400], Train Loss: 0.005080, Val Loss: 0.018902
+Epoch [60/400], Train Loss: 0.004190, Val Loss: 0.020357
+Epoch [70/400], Train Loss: 0.004328, Val Loss: 0.017910
+Epoch [80/400], Train Loss: 0.003697, Val Loss: 0.018055
+Epoch [90/400], Train Loss: 0.003887, Val Loss: 0.018033
+Epoch [100/400], Train Loss: 0.003793, Val Loss: 0.017742
+Epoch [110/400], Train Loss: 0.003898, Val Loss: 0.017513
+Epoch [120/400], Train Loss: 0.003834, Val Loss: 0.017427
+Epoch [130/400], Train Loss: 0.003613, Val Loss: 0.017466
+Epoch [140/400], Train Loss: 0.003590, Val Loss: 0.017474
+Epoch [150/400], Train Loss: 0.003706, Val Loss: 0.017422
+Epoch [160/400], Train Loss: 0.003755, Val Loss: 0.017424
+Epoch [170/400], Train Loss: 0.003875, Val Loss: 0.017425
+Epoch [180/400], Train Loss: 0.003986, Val Loss: 0.017424
+Epoch [190/400], Train Loss: 0.003819, Val Loss: 0.017423
+Epoch [200/400], Train Loss: 0.003800, Val Loss: 0.017423
+Epoch [210/400], Train Loss: 0.003817, Val Loss: 0.017423
+Epoch [220/400], Train Loss: 0.003677, Val Loss: 0.017423
+Epoch [230/400], Train Loss: 0.003756, Val Loss: 0.017423
+Epoch [240/400], Train Loss: 0.003835, Val Loss: 0.017423
+Epoch [250/400], Train Loss: 0.003816, Val Loss: 0.017424
+Epoch [260/400], Train Loss: 0.003769, Val Loss: 0.017424
+Epoch [270/400], Train Loss: 0.003696, Val Loss: 0.017424
+Epoch [280/400], Train Loss: 0.003682, Val Loss: 0.017424
+Epoch [290/400], Train Loss: 0.003965, Val Loss: 0.017424
+Epoch [300/400], Train Loss: 0.003563, Val Loss: 0.017424
+Epoch [310/400], Train Loss: 0.003673, Val Loss: 0.017424
+Epoch [320/400], Train Loss: 0.003805, Val Loss: 0.017425
+Epoch [330/400], Train Loss: 0.003738, Val Loss: 0.017425
+Epoch [340/400], Train Loss: 0.003732, Val Loss: 0.017426
+Epoch [350/400], Train Loss: 0.003646, Val Loss: 0.017426
+Epoch [360/400], Train Loss: 0.003758, Val Loss: 0.017427
+Epoch [370/400], Train Loss: 0.003683, Val Loss: 0.017427
+Epoch [380/400], Train Loss: 0.003530, Val Loss: 0.017427
+Epoch [390/400], Train Loss: 0.003651, Val Loss: 0.017427
+Epoch [400/400], Train Loss: 0.003712, Val Loss: 0.017427
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.008765, Val Loss: 0.011604
+Epoch [20/400], Train Loss: 0.008300, Val Loss: 0.015752
+Epoch [30/400], Train Loss: 0.007474, Val Loss: 0.018503
+Epoch [40/400], Train Loss: 0.006553, Val Loss: 0.013409
+Epoch [50/400], Train Loss: 0.005490, Val Loss: 0.014322
+Epoch [60/400], Train Loss: 0.005038, Val Loss: 0.014952
+Epoch [70/400], Train Loss: 0.004989, Val Loss: 0.016365
+Epoch [80/400], Train Loss: 0.004819, Val Loss: 0.016126
+Epoch [90/400], Train Loss: 0.004801, Val Loss: 0.016779
+Epoch [100/400], Train Loss: 0.004655, Val Loss: 0.016758
+Epoch [110/400], Train Loss: 0.004650, Val Loss: 0.016977
+Epoch [120/400], Train Loss: 0.004551, Val Loss: 0.017115
+Epoch [130/400], Train Loss: 0.004533, Val Loss: 0.017235
+Epoch [140/400], Train Loss: 0.004555, Val Loss: 0.017289
+Epoch [150/400], Train Loss: 0.004617, Val Loss: 0.017276
+Epoch [160/400], Train Loss: 0.004640, Val Loss: 0.017274
+Epoch [170/400], Train Loss: 0.004508, Val Loss: 0.017283
+Epoch [180/400], Train Loss: 0.004619, Val Loss: 0.017288
+Epoch [190/400], Train Loss: 0.004642, Val Loss: 0.017280
+Epoch [200/400], Train Loss: 0.004752, Val Loss: 0.017275
+Epoch [210/400], Train Loss: 0.004590, Val Loss: 0.017276
+Epoch [220/400], Train Loss: 0.004709, Val Loss: 0.017275
+Epoch [230/400], Train Loss: 0.004561, Val Loss: 0.017275
+Epoch [240/400], Train Loss: 0.004451, Val Loss: 0.017275
+Epoch [250/400], Train Loss: 0.004767, Val Loss: 0.017274
+Epoch [260/400], Train Loss: 0.004423, Val Loss: 0.017274
+Epoch [270/400], Train Loss: 0.004409, Val Loss: 0.017274
+Epoch [280/400], Train Loss: 0.004509, Val Loss: 0.017274
+Epoch [290/400], Train Loss: 0.004552, Val Loss: 0.017273
+Epoch [300/400], Train Loss: 0.004669, Val Loss: 0.017273
+Epoch [310/400], Train Loss: 0.004526, Val Loss: 0.017273
+Epoch [320/400], Train Loss: 0.004430, Val Loss: 0.017273
+Epoch [330/400], Train Loss: 0.004601, Val Loss: 0.017273
+Epoch [340/400], Train Loss: 0.004371, Val Loss: 0.017273
+Epoch [350/400], Train Loss: 0.004559, Val Loss: 0.017273
+Epoch [360/400], Train Loss: 0.004332, Val Loss: 0.017272
+Epoch [370/400], Train Loss: 0.004595, Val Loss: 0.017272
+Epoch [380/400], Train Loss: 0.004413, Val Loss: 0.017272
+Epoch [390/400], Train Loss: 0.004610, Val Loss: 0.017271
+Epoch [400/400], Train Loss: 0.004740, Val Loss: 0.017271
+实际预测天数: 365
+短期预测 - MSE: 197497.0938, MAE: 350.3596
+长期预测 - MSE: 178403.5312, MAE: 324.9416
+
+=== 实验 2/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.009087, Val Loss: 0.013502
+Epoch [20/400], Train Loss: 0.007967, Val Loss: 0.012975
+Epoch [30/400], Train Loss: 0.007476, Val Loss: 0.014221
+Epoch [40/400], Train Loss: 0.007086, Val Loss: 0.016559
+Epoch [50/400], Train Loss: 0.006460, Val Loss: 0.017393
+Epoch [60/400], Train Loss: 0.006445, Val Loss: 0.015083
+Epoch [70/400], Train Loss: 0.005841, Val Loss: 0.015444
+Epoch [80/400], Train Loss: 0.005773, Val Loss: 0.015712
+Epoch [90/400], Train Loss: 0.005656, Val Loss: 0.015878
+Epoch [100/400], Train Loss: 0.005557, Val Loss: 0.015888
+Epoch [110/400], Train Loss: 0.005695, Val Loss: 0.016042
+Epoch [120/400], Train Loss: 0.005750, Val Loss: 0.015897
+Epoch [130/400], Train Loss: 0.005671, Val Loss: 0.016049
+Epoch [140/400], Train Loss: 0.005516, Val Loss: 0.015985
+Epoch [150/400], Train Loss: 0.005616, Val Loss: 0.015991
+Epoch [160/400], Train Loss: 0.005716, Val Loss: 0.016018
+Epoch [170/400], Train Loss: 0.005637, Val Loss: 0.016023
+Epoch [180/400], Train Loss: 0.005458, Val Loss: 0.016027
+Epoch [190/400], Train Loss: 0.005475, Val Loss: 0.016029
+Epoch [200/400], Train Loss: 0.005257, Val Loss: 0.016031
+Epoch [210/400], Train Loss: 0.005706, Val Loss: 0.016030
+Epoch [220/400], Train Loss: 0.005727, Val Loss: 0.016030
+Epoch [230/400], Train Loss: 0.005772, Val Loss: 0.016029
+Epoch [240/400], Train Loss: 0.005399, Val Loss: 0.016029
+Epoch [250/400], Train Loss: 0.005682, Val Loss: 0.016030
+Epoch [260/400], Train Loss: 0.005556, Val Loss: 0.016030
+Epoch [270/400], Train Loss: 0.005352, Val Loss: 0.016029
+Epoch [280/400], Train Loss: 0.005384, Val Loss: 0.016030
+Epoch [290/400], Train Loss: 0.005605, Val Loss: 0.016030
+Epoch [300/400], Train Loss: 0.005752, Val Loss: 0.016030
+Epoch [310/400], Train Loss: 0.005411, Val Loss: 0.016030
+Epoch [320/400], Train Loss: 0.005420, Val Loss: 0.016030
+Epoch [330/400], Train Loss: 0.005355, Val Loss: 0.016029
+Epoch [340/400], Train Loss: 0.005589, Val Loss: 0.016030
+Epoch [350/400], Train Loss: 0.005549, Val Loss: 0.016029
+Epoch [360/400], Train Loss: 0.005856, Val Loss: 0.016029
+Epoch [370/400], Train Loss: 0.005539, Val Loss: 0.016030
+Epoch [380/400], Train Loss: 0.005592, Val Loss: 0.016030
+Epoch [390/400], Train Loss: 0.005457, Val Loss: 0.016030
+Epoch [400/400], Train Loss: 0.005420, Val Loss: 0.016029
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.009248, Val Loss: 0.012175
+Epoch [20/400], Train Loss: 0.008496, Val Loss: 0.018060
+Epoch [30/400], Train Loss: 0.008080, Val Loss: 0.013347
+Epoch [40/400], Train Loss: 0.008393, Val Loss: 0.016275
+Epoch [50/400], Train Loss: 0.007612, Val Loss: 0.015829
+Epoch [60/400], Train Loss: 0.006781, Val Loss: 0.016034
+Epoch [70/400], Train Loss: 0.006884, Val Loss: 0.015271
+Epoch [80/400], Train Loss: 0.006813, Val Loss: 0.014325
+Epoch [90/400], Train Loss: 0.006646, Val Loss: 0.014692
+Epoch [100/400], Train Loss: 0.006761, Val Loss: 0.015012
+Epoch [110/400], Train Loss: 0.007053, Val Loss: 0.014896
+Epoch [120/400], Train Loss: 0.006769, Val Loss: 0.014988
+Epoch [130/400], Train Loss: 0.006701, Val Loss: 0.015026
+Epoch [140/400], Train Loss: 0.006832, Val Loss: 0.014992
+Epoch [150/400], Train Loss: 0.006606, Val Loss: 0.015041
+Epoch [160/400], Train Loss: 0.006696, Val Loss: 0.015055
+Epoch [170/400], Train Loss: 0.006611, Val Loss: 0.015065
+Epoch [180/400], Train Loss: 0.006827, Val Loss: 0.015066
+Epoch [190/400], Train Loss: 0.006576, Val Loss: 0.015068
+Epoch [200/400], Train Loss: 0.007028, Val Loss: 0.015067
+Epoch [210/400], Train Loss: 0.006768, Val Loss: 0.015069
+Epoch [220/400], Train Loss: 0.006961, Val Loss: 0.015068
+Epoch [230/400], Train Loss: 0.006800, Val Loss: 0.015068
+Epoch [240/400], Train Loss: 0.006853, Val Loss: 0.015068
+Epoch [250/400], Train Loss: 0.006589, Val Loss: 0.015068
+Epoch [260/400], Train Loss: 0.006798, Val Loss: 0.015069
+Epoch [270/400], Train Loss: 0.006724, Val Loss: 0.015069
+Epoch [280/400], Train Loss: 0.006785, Val Loss: 0.015069
+Epoch [290/400], Train Loss: 0.006607, Val Loss: 0.015068
+Epoch [300/400], Train Loss: 0.007116, Val Loss: 0.015069
+Epoch [310/400], Train Loss: 0.006825, Val Loss: 0.015069
+Epoch [320/400], Train Loss: 0.006943, Val Loss: 0.015068
+Epoch [330/400], Train Loss: 0.006837, Val Loss: 0.015069
+Epoch [340/400], Train Loss: 0.006955, Val Loss: 0.015070
+Epoch [350/400], Train Loss: 0.006454, Val Loss: 0.015069
+Epoch [360/400], Train Loss: 0.006566, Val Loss: 0.015070
+Epoch [370/400], Train Loss: 0.006605, Val Loss: 0.015070
+Epoch [380/400], Train Loss: 0.006966, Val Loss: 0.015069
+Epoch [390/400], Train Loss: 0.006726, Val Loss: 0.015069
+Epoch [400/400], Train Loss: 0.006695, Val Loss: 0.015069
+实际预测天数: 365
+短期预测 - MSE: 189145.8906, MAE: 348.7258
+长期预测 - MSE: 152017.1719, MAE: 298.4413
+
+=== 实验 3/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.008976, Val Loss: 0.016278
+Epoch [20/400], Train Loss: 0.007844, Val Loss: 0.013850
+Epoch [30/400], Train Loss: 0.006960, Val Loss: 0.013741
+Epoch [40/400], Train Loss: 0.006131, Val Loss: 0.016220
+Epoch [50/400], Train Loss: 0.005538, Val Loss: 0.014033
+Epoch [60/400], Train Loss: 0.005426, Val Loss: 0.014774
+Epoch [70/400], Train Loss: 0.004718, Val Loss: 0.015039
+Epoch [80/400], Train Loss: 0.004831, Val Loss: 0.015245
+Epoch [90/400], Train Loss: 0.004637, Val Loss: 0.015057
+Epoch [100/400], Train Loss: 0.004584, Val Loss: 0.015218
+Epoch [110/400], Train Loss: 0.004597, Val Loss: 0.015083
+Epoch [120/400], Train Loss: 0.004484, Val Loss: 0.015053
+Epoch [130/400], Train Loss: 0.004612, Val Loss: 0.015074
+Epoch [140/400], Train Loss: 0.004777, Val Loss: 0.015141
+Epoch [150/400], Train Loss: 0.004574, Val Loss: 0.015116
+Epoch [160/400], Train Loss: 0.004709, Val Loss: 0.015142
+Epoch [170/400], Train Loss: 0.004913, Val Loss: 0.015145
+Epoch [180/400], Train Loss: 0.004805, Val Loss: 0.015138
+Epoch [190/400], Train Loss: 0.004596, Val Loss: 0.015136
+Epoch [200/400], Train Loss: 0.004585, Val Loss: 0.015137
+Epoch [210/400], Train Loss: 0.004629, Val Loss: 0.015137
+Epoch [220/400], Train Loss: 0.004705, Val Loss: 0.015138
+Epoch [230/400], Train Loss: 0.004418, Val Loss: 0.015137
+Epoch [240/400], Train Loss: 0.004962, Val Loss: 0.015137
+Epoch [250/400], Train Loss: 0.004548, Val Loss: 0.015137
+Epoch [260/400], Train Loss: 0.004718, Val Loss: 0.015137
+Epoch [270/400], Train Loss: 0.004786, Val Loss: 0.015137
+Epoch [280/400], Train Loss: 0.004523, Val Loss: 0.015137
+Epoch [290/400], Train Loss: 0.004738, Val Loss: 0.015137
+Epoch [300/400], Train Loss: 0.004823, Val Loss: 0.015136
+Epoch [310/400], Train Loss: 0.004670, Val Loss: 0.015137
+Epoch [320/400], Train Loss: 0.004710, Val Loss: 0.015137
+Epoch [330/400], Train Loss: 0.004489, Val Loss: 0.015137
+Epoch [340/400], Train Loss: 0.004495, Val Loss: 0.015137
+Epoch [350/400], Train Loss: 0.004707, Val Loss: 0.015137
+Epoch [360/400], Train Loss: 0.004590, Val Loss: 0.015137
+Epoch [370/400], Train Loss: 0.004583, Val Loss: 0.015137
+Epoch [380/400], Train Loss: 0.004633, Val Loss: 0.015137
+Epoch [390/400], Train Loss: 0.004563, Val Loss: 0.015137
+Epoch [400/400], Train Loss: 0.004610, Val Loss: 0.015137
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.009383, Val Loss: 0.015189
+Epoch [20/400], Train Loss: 0.008235, Val Loss: 0.012705
+Epoch [30/400], Train Loss: 0.008534, Val Loss: 0.014635
+Epoch [40/400], Train Loss: 0.007455, Val Loss: 0.014346
+Epoch [50/400], Train Loss: 0.006705, Val Loss: 0.017068
+Epoch [60/400], Train Loss: 0.006383, Val Loss: 0.015931
+Epoch [70/400], Train Loss: 0.005991, Val Loss: 0.014730
+Epoch [80/400], Train Loss: 0.006103, Val Loss: 0.014985
+Epoch [90/400], Train Loss: 0.005644, Val Loss: 0.015697
+Epoch [100/400], Train Loss: 0.005567, Val Loss: 0.015858
+Epoch [110/400], Train Loss: 0.005760, Val Loss: 0.015740
+Epoch [120/400], Train Loss: 0.005680, Val Loss: 0.016041
+Epoch [130/400], Train Loss: 0.005591, Val Loss: 0.016125
+Epoch [140/400], Train Loss: 0.005719, Val Loss: 0.016175
+Epoch [150/400], Train Loss: 0.005497, Val Loss: 0.016140
+Epoch [160/400], Train Loss: 0.005839, Val Loss: 0.016159
+Epoch [170/400], Train Loss: 0.005621, Val Loss: 0.016136
+Epoch [180/400], Train Loss: 0.005685, Val Loss: 0.016148
+Epoch [190/400], Train Loss: 0.005718, Val Loss: 0.016149
+Epoch [200/400], Train Loss: 0.005782, Val Loss: 0.016148
+Epoch [210/400], Train Loss: 0.005888, Val Loss: 0.016146
+Epoch [220/400], Train Loss: 0.005649, Val Loss: 0.016146
+Epoch [230/400], Train Loss: 0.005851, Val Loss: 0.016146
+Epoch [240/400], Train Loss: 0.005623, Val Loss: 0.016146
+Epoch [250/400], Train Loss: 0.005375, Val Loss: 0.016146
+Epoch [260/400], Train Loss: 0.005575, Val Loss: 0.016146
+Epoch [270/400], Train Loss: 0.005788, Val Loss: 0.016147
+Epoch [280/400], Train Loss: 0.005671, Val Loss: 0.016146
+Epoch [290/400], Train Loss: 0.005617, Val Loss: 0.016146
+Epoch [300/400], Train Loss: 0.005743, Val Loss: 0.016146
+Epoch [310/400], Train Loss: 0.005801, Val Loss: 0.016147
+Epoch [320/400], Train Loss: 0.005801, Val Loss: 0.016147
+Epoch [330/400], Train Loss: 0.005693, Val Loss: 0.016147
+Epoch [340/400], Train Loss: 0.005610, Val Loss: 0.016147
+Epoch [350/400], Train Loss: 0.005803, Val Loss: 0.016147
+Epoch [360/400], Train Loss: 0.005302, Val Loss: 0.016148
+Epoch [370/400], Train Loss: 0.005812, Val Loss: 0.016147
+Epoch [380/400], Train Loss: 0.005742, Val Loss: 0.016147
+Epoch [390/400], Train Loss: 0.005726, Val Loss: 0.016147
+Epoch [400/400], Train Loss: 0.005645, Val Loss: 0.016147
+实际预测天数: 365
+短期预测 - MSE: 195161.0625, MAE: 349.0018
+长期预测 - MSE: 156781.0156, MAE: 301.1034
+
+=== 实验 4/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.009516, Val Loss: 0.013866
+Epoch [20/400], Train Loss: 0.008952, Val Loss: 0.011729
+Epoch [30/400], Train Loss: 0.008371, Val Loss: 0.013626
+Epoch [40/400], Train Loss: 0.007775, Val Loss: 0.014963
+Epoch [50/400], Train Loss: 0.007466, Val Loss: 0.015057
+Epoch [60/400], Train Loss: 0.007063, Val Loss: 0.014946
+Epoch [70/400], Train Loss: 0.006779, Val Loss: 0.016690
+Epoch [80/400], Train Loss: 0.006850, Val Loss: 0.016938
+Epoch [90/400], Train Loss: 0.006962, Val Loss: 0.016741
+Epoch [100/400], Train Loss: 0.006526, Val Loss: 0.016557
+Epoch [110/400], Train Loss: 0.006857, Val Loss: 0.016622
+Epoch [120/400], Train Loss: 0.006583, Val Loss: 0.016614
+Epoch [130/400], Train Loss: 0.006480, Val Loss: 0.016708
+Epoch [140/400], Train Loss: 0.006567, Val Loss: 0.016762
+Epoch [150/400], Train Loss: 0.006608, Val Loss: 0.016773
+Epoch [160/400], Train Loss: 0.006340, Val Loss: 0.016762
+Epoch [170/400], Train Loss: 0.006772, Val Loss: 0.016763
+Epoch [180/400], Train Loss: 0.007070, Val Loss: 0.016760
+Epoch [190/400], Train Loss: 0.006774, Val Loss: 0.016759
+Epoch [200/400], Train Loss: 0.006752, Val Loss: 0.016757
+Epoch [210/400], Train Loss: 0.006822, Val Loss: 0.016757
+Epoch [220/400], Train Loss: 0.006932, Val Loss: 0.016757
+Epoch [230/400], Train Loss: 0.006829, Val Loss: 0.016757
+Epoch [240/400], Train Loss: 0.006813, Val Loss: 0.016756
+Epoch [250/400], Train Loss: 0.006732, Val Loss: 0.016757
+Epoch [260/400], Train Loss: 0.006505, Val Loss: 0.016756
+Epoch [270/400], Train Loss: 0.006991, Val Loss: 0.016756
+Epoch [280/400], Train Loss: 0.006844, Val Loss: 0.016756
+Epoch [290/400], Train Loss: 0.006898, Val Loss: 0.016755
+Epoch [300/400], Train Loss: 0.006684, Val Loss: 0.016756
+Epoch [310/400], Train Loss: 0.006973, Val Loss: 0.016755
+Epoch [320/400], Train Loss: 0.006797, Val Loss: 0.016755
+Epoch [330/400], Train Loss: 0.006752, Val Loss: 0.016755
+Epoch [340/400], Train Loss: 0.006653, Val Loss: 0.016756
+Epoch [350/400], Train Loss: 0.006628, Val Loss: 0.016757
+Epoch [360/400], Train Loss: 0.006706, Val Loss: 0.016757
+Epoch [370/400], Train Loss: 0.006862, Val Loss: 0.016757
+Epoch [380/400], Train Loss: 0.006754, Val Loss: 0.016757
+Epoch [390/400], Train Loss: 0.006414, Val Loss: 0.016757
+Epoch [400/400], Train Loss: 0.006644, Val Loss: 0.016757
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.008795, Val Loss: 0.012224
+Epoch [20/400], Train Loss: 0.007968, Val Loss: 0.015357
+Epoch [30/400], Train Loss: 0.007451, Val Loss: 0.014612
+Epoch [40/400], Train Loss: 0.006735, Val Loss: 0.015150
+Epoch [50/400], Train Loss: 0.006529, Val Loss: 0.016471
+Epoch [60/400], Train Loss: 0.006244, Val Loss: 0.015633
+Epoch [70/400], Train Loss: 0.005963, Val Loss: 0.016074
+Epoch [80/400], Train Loss: 0.006129, Val Loss: 0.015668
+Epoch [90/400], Train Loss: 0.006022, Val Loss: 0.015898
+Epoch [100/400], Train Loss: 0.005844, Val Loss: 0.015938
+Epoch [110/400], Train Loss: 0.005808, Val Loss: 0.016015
+Epoch [120/400], Train Loss: 0.005854, Val Loss: 0.016034
+Epoch [130/400], Train Loss: 0.005755, Val Loss: 0.015974
+Epoch [140/400], Train Loss: 0.005814, Val Loss: 0.015969
+Epoch [150/400], Train Loss: 0.005825, Val Loss: 0.015955
+Epoch [160/400], Train Loss: 0.005712, Val Loss: 0.015946
+Epoch [170/400], Train Loss: 0.005627, Val Loss: 0.015952
+Epoch [180/400], Train Loss: 0.005933, Val Loss: 0.015957
+Epoch [190/400], Train Loss: 0.005552, Val Loss: 0.015958
+Epoch [200/400], Train Loss: 0.005810, Val Loss: 0.015959
+Epoch [210/400], Train Loss: 0.005685, Val Loss: 0.015959
+Epoch [220/400], Train Loss: 0.005738, Val Loss: 0.015959
+Epoch [230/400], Train Loss: 0.005704, Val Loss: 0.015958
+Epoch [240/400], Train Loss: 0.005700, Val Loss: 0.015959
+Epoch [250/400], Train Loss: 0.005778, Val Loss: 0.015959
+Epoch [260/400], Train Loss: 0.005759, Val Loss: 0.015959
+Epoch [270/400], Train Loss: 0.005624, Val Loss: 0.015960
+Epoch [280/400], Train Loss: 0.005897, Val Loss: 0.015960
+Epoch [290/400], Train Loss: 0.005808, Val Loss: 0.015960
+Epoch [300/400], Train Loss: 0.005699, Val Loss: 0.015960
+Epoch [310/400], Train Loss: 0.005641, Val Loss: 0.015960
+Epoch [320/400], Train Loss: 0.005907, Val Loss: 0.015961
+Epoch [330/400], Train Loss: 0.006002, Val Loss: 0.015961
+Epoch [340/400], Train Loss: 0.005697, Val Loss: 0.015961
+Epoch [350/400], Train Loss: 0.005806, Val Loss: 0.015961
+Epoch [360/400], Train Loss: 0.005616, Val Loss: 0.015960
+Epoch [370/400], Train Loss: 0.005820, Val Loss: 0.015960
+Epoch [380/400], Train Loss: 0.006197, Val Loss: 0.015960
+Epoch [390/400], Train Loss: 0.005858, Val Loss: 0.015960
+Epoch [400/400], Train Loss: 0.005789, Val Loss: 0.015960
+实际预测天数: 365
+短期预测 - MSE: 170488.8438, MAE: 331.3904
+长期预测 - MSE: 168787.1875, MAE: 315.1299
+
+=== 实验 5/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.008790, Val Loss: 0.011710
+Epoch [20/400], Train Loss: 0.008268, Val Loss: 0.017081
+Epoch [30/400], Train Loss: 0.007202, Val Loss: 0.018646
+Epoch [40/400], Train Loss: 0.006455, Val Loss: 0.014761
+Epoch [50/400], Train Loss: 0.005823, Val Loss: 0.015419
+Epoch [60/400], Train Loss: 0.005520, Val Loss: 0.014335
+Epoch [70/400], Train Loss: 0.005387, Val Loss: 0.014783
+Epoch [80/400], Train Loss: 0.005404, Val Loss: 0.014912
+Epoch [90/400], Train Loss: 0.005171, Val Loss: 0.015210
+Epoch [100/400], Train Loss: 0.005466, Val Loss: 0.015375
+Epoch [110/400], Train Loss: 0.005230, Val Loss: 0.015244
+Epoch [120/400], Train Loss: 0.005186, Val Loss: 0.015288
+Epoch [130/400], Train Loss: 0.005273, Val Loss: 0.015355
+Epoch [140/400], Train Loss: 0.005251, Val Loss: 0.015357
+Epoch [150/400], Train Loss: 0.005334, Val Loss: 0.015350
+Epoch [160/400], Train Loss: 0.005210, Val Loss: 0.015357
+Epoch [170/400], Train Loss: 0.005409, Val Loss: 0.015356
+Epoch [180/400], Train Loss: 0.005194, Val Loss: 0.015359
+Epoch [190/400], Train Loss: 0.004877, Val Loss: 0.015359
+Epoch [200/400], Train Loss: 0.005288, Val Loss: 0.015359
+Epoch [210/400], Train Loss: 0.005253, Val Loss: 0.015360
+Epoch [220/400], Train Loss: 0.005309, Val Loss: 0.015360
+Epoch [230/400], Train Loss: 0.005338, Val Loss: 0.015360
+Epoch [240/400], Train Loss: 0.005155, Val Loss: 0.015360
+Epoch [250/400], Train Loss: 0.005316, Val Loss: 0.015360
+Epoch [260/400], Train Loss: 0.005343, Val Loss: 0.015360
+Epoch [270/400], Train Loss: 0.005347, Val Loss: 0.015360
+Epoch [280/400], Train Loss: 0.005207, Val Loss: 0.015359
+Epoch [290/400], Train Loss: 0.005364, Val Loss: 0.015359
+Epoch [300/400], Train Loss: 0.005178, Val Loss: 0.015359
+Epoch [310/400], Train Loss: 0.005236, Val Loss: 0.015360
+Epoch [320/400], Train Loss: 0.005301, Val Loss: 0.015360
+Epoch [330/400], Train Loss: 0.005322, Val Loss: 0.015360
+Epoch [340/400], Train Loss: 0.005273, Val Loss: 0.015360
+Epoch [350/400], Train Loss: 0.005258, Val Loss: 0.015360
+Epoch [360/400], Train Loss: 0.005236, Val Loss: 0.015360
+Epoch [370/400], Train Loss: 0.005510, Val Loss: 0.015359
+Epoch [380/400], Train Loss: 0.005270, Val Loss: 0.015360
+Epoch [390/400], Train Loss: 0.005230, Val Loss: 0.015360
+Epoch [400/400], Train Loss: 0.005226, Val Loss: 0.015360
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 400)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/400], Train Loss: 0.010276, Val Loss: 0.014595
+Epoch [20/400], Train Loss: 0.008166, Val Loss: 0.014525
+Epoch [30/400], Train Loss: 0.007645, Val Loss: 0.015014
+Epoch [40/400], Train Loss: 0.007237, Val Loss: 0.016111
+Epoch [50/400], Train Loss: 0.006758, Val Loss: 0.014509
+Epoch [60/400], Train Loss: 0.006244, Val Loss: 0.015684
+Epoch [70/400], Train Loss: 0.006144, Val Loss: 0.014226
+Epoch [80/400], Train Loss: 0.006390, Val Loss: 0.014721
+Epoch [90/400], Train Loss: 0.006214, Val Loss: 0.014100
+Epoch [100/400], Train Loss: 0.005832, Val Loss: 0.014635
+Epoch [110/400], Train Loss: 0.006301, Val Loss: 0.014460
+Epoch [120/400], Train Loss: 0.005753, Val Loss: 0.014553
+Epoch [130/400], Train Loss: 0.006052, Val Loss: 0.014520
+Epoch [140/400], Train Loss: 0.006051, Val Loss: 0.014547
+Epoch [150/400], Train Loss: 0.006166, Val Loss: 0.014541
+Epoch [160/400], Train Loss: 0.006047, Val Loss: 0.014538
+Epoch [170/400], Train Loss: 0.006138, Val Loss: 0.014544
+Epoch [180/400], Train Loss: 0.006070, Val Loss: 0.014544
+Epoch [190/400], Train Loss: 0.006124, Val Loss: 0.014546
+Epoch [200/400], Train Loss: 0.006062, Val Loss: 0.014545
+Epoch [210/400], Train Loss: 0.006105, Val Loss: 0.014544
+Epoch [220/400], Train Loss: 0.006105, Val Loss: 0.014545
+Epoch [230/400], Train Loss: 0.005979, Val Loss: 0.014545
+Epoch [240/400], Train Loss: 0.005909, Val Loss: 0.014545
+Epoch [250/400], Train Loss: 0.005860, Val Loss: 0.014545
+Epoch [260/400], Train Loss: 0.006007, Val Loss: 0.014544
+Epoch [270/400], Train Loss: 0.006148, Val Loss: 0.014544
+Epoch [280/400], Train Loss: 0.006020, Val Loss: 0.014544
+Epoch [290/400], Train Loss: 0.005887, Val Loss: 0.014543
+Epoch [300/400], Train Loss: 0.006001, Val Loss: 0.014542
+Epoch [310/400], Train Loss: 0.005888, Val Loss: 0.014543
+Epoch [320/400], Train Loss: 0.005853, Val Loss: 0.014543
+Epoch [330/400], Train Loss: 0.006412, Val Loss: 0.014543
+Epoch [340/400], Train Loss: 0.005933, Val Loss: 0.014543
+Epoch [350/400], Train Loss: 0.006294, Val Loss: 0.014543
+Epoch [360/400], Train Loss: 0.005933, Val Loss: 0.014543
+Epoch [370/400], Train Loss: 0.006397, Val Loss: 0.014542
+Epoch [380/400], Train Loss: 0.006009, Val Loss: 0.014543
+Epoch [390/400], Train Loss: 0.005834, Val Loss: 0.014543
+Epoch [400/400], Train Loss: 0.006330, Val Loss: 0.014543
+实际预测天数: 365
+短期预测 - MSE: 214190.3281, MAE: 356.7666
+长期预测 - MSE: 160962.2188, MAE: 309.1208
+
+=== 实验结果汇总 ===
+
+短期预测结果:
+MSE: 193296.6406 ± 14107.3770
+MAE: 347.2489 ± 8.4500
+
+长期预测结果:
+MSE: 163390.2188 ± 9310.7432
+MAE: 309.7474 ± 9.6205
+
+实验完成！结果图片已保存为:
+- lstm_prediction_results_improved.png (预测结果对比图)
+- lstm_error_analysis_improved.png (误差分析图)

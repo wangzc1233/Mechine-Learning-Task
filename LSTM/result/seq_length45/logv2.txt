@@ -1,4 +1,14 @@
 nohup: ignoring input
+MODEL_PARAMS = {
+    'seq_length': 50,           # 序列长度
+    'hidden_size': 128,         # LSTM隐藏层大小
+    'num_layers': 2,            # LSTM层数
+    'dropout': 0.2,             # Dropout比例
+    'learning_rate': 0.005,     # 学习率
+    'batch_size': 32,           # 批次大小
+    'epochs_short': 100,         # 短期预测训练轮数
+    'epochs_long': 100,          # 长期预测训练轮数
+}
 === LSTM电力预测系统 - 改进版 ===
 全局参数配置:
 模型参数: {'seq_length': 45, 'hidden_size': 128, 'num_layers': 2, 'dropout': 0.2, 'learning_rate': 0.005, 'batch_size': 32, 'epochs_short': 100, 'epochs_long': 100}

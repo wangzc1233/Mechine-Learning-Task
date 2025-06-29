@@ -1,0 +1,209 @@
+nohup: ignoring input
+=== LSTM电力预测系统 - 改进版 ===
+全局参数配置:
+模型参数: {'seq_length': 50, 'hidden_size': 128, 'num_layers': 2, 'dropout': 0.2, 'learning_rate': 0.001, 'batch_size': 32, 'epochs_short': 100, 'epochs_long': 100}
+训练参数: {'val_split_ratio': 0.1, 'num_experiments': 5, 'random_seed': 42, 'prediction_days_short': 90, 'prediction_days_long': 365}
+数据路径: {'train_path': 'data/train_processed_data.csv', 'test_path': 'data/test_processed_data.csv'}
+使用设备: cuda
+正在加载数据...
+原始训练集大小: 746
+测试集大小: 687
+特征列: ['Global_reactive_power', 'Voltage', 'Global_intensity', 'Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3', 'RR', 'NBJRR1', 'NBJRR5', 'NBJRR10', 'NBJBROU', 'Sub_metering_remainder']
+训练集大小: 671
+验证集大小: 75
+输入特征维度: 12
+开始进行5次实验...
+
+=== 实验 1/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009752, Val Loss: 0.017335
+Epoch [20/100], Train Loss: 0.009202, Val Loss: 0.014577
+Epoch [30/100], Train Loss: 0.008221, Val Loss: 0.014775
+Epoch [40/100], Train Loss: 0.008080, Val Loss: 0.016868
+Epoch [50/100], Train Loss: 0.007963, Val Loss: 0.014624
+Epoch [60/100], Train Loss: 0.007832, Val Loss: 0.015370
+Epoch [70/100], Train Loss: 0.008304, Val Loss: 0.014817
+Epoch [80/100], Train Loss: 0.007434, Val Loss: 0.015506
+Epoch [90/100], Train Loss: 0.007270, Val Loss: 0.015229
+Epoch [100/100], Train Loss: 0.007581, Val Loss: 0.015309
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.010135, Val Loss: 0.011988
+Epoch [20/100], Train Loss: 0.010859, Val Loss: 0.011979
+Epoch [30/100], Train Loss: 0.008863, Val Loss: 0.015467
+Epoch [40/100], Train Loss: 0.008649, Val Loss: 0.015344
+Epoch [50/100], Train Loss: 0.008075, Val Loss: 0.016670
+Epoch [60/100], Train Loss: 0.007924, Val Loss: 0.016781
+Epoch [70/100], Train Loss: 0.008016, Val Loss: 0.016657
+Epoch [80/100], Train Loss: 0.008152, Val Loss: 0.016554
+Epoch [90/100], Train Loss: 0.008048, Val Loss: 0.016414
+Epoch [100/100], Train Loss: 0.008204, Val Loss: 0.016349
+实际预测天数: 365
+短期预测 - MSE: 184334.7188, MAE: 354.2012
+长期预测 - MSE: 143713.0000, MAE: 297.3524
+
+=== 实验 2/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009487, Val Loss: 0.012258
+Epoch [20/100], Train Loss: 0.008507, Val Loss: 0.014253
+Epoch [30/100], Train Loss: 0.009271, Val Loss: 0.014575
+Epoch [40/100], Train Loss: 0.009071, Val Loss: 0.016091
+Epoch [50/100], Train Loss: 0.009008, Val Loss: 0.015783
+Epoch [60/100], Train Loss: 0.008396, Val Loss: 0.016133
+Epoch [70/100], Train Loss: 0.008745, Val Loss: 0.015816
+Epoch [80/100], Train Loss: 0.008516, Val Loss: 0.016007
+Epoch [90/100], Train Loss: 0.008453, Val Loss: 0.015780
+Epoch [100/100], Train Loss: 0.008235, Val Loss: 0.015880
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009887, Val Loss: 0.014309
+Epoch [20/100], Train Loss: 0.009286, Val Loss: 0.015637
+Epoch [30/100], Train Loss: 0.008772, Val Loss: 0.015083
+Epoch [40/100], Train Loss: 0.008660, Val Loss: 0.014382
+Epoch [50/100], Train Loss: 0.008607, Val Loss: 0.015197
+Epoch [60/100], Train Loss: 0.008448, Val Loss: 0.015443
+Epoch [70/100], Train Loss: 0.008241, Val Loss: 0.015496
+Epoch [80/100], Train Loss: 0.008585, Val Loss: 0.015322
+Epoch [90/100], Train Loss: 0.008324, Val Loss: 0.015417
+Epoch [100/100], Train Loss: 0.008444, Val Loss: 0.015551
+实际预测天数: 365
+短期预测 - MSE: 156776.8281, MAE: 324.1653
+长期预测 - MSE: 140127.1250, MAE: 292.1177
+
+=== 实验 3/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009832, Val Loss: 0.013117
+Epoch [20/100], Train Loss: 0.008735, Val Loss: 0.015660
+Epoch [30/100], Train Loss: 0.008649, Val Loss: 0.014377
+Epoch [40/100], Train Loss: 0.008153, Val Loss: 0.016469
+Epoch [50/100], Train Loss: 0.008322, Val Loss: 0.016498
+Epoch [60/100], Train Loss: 0.008405, Val Loss: 0.016128
+Epoch [70/100], Train Loss: 0.007948, Val Loss: 0.016524
+Epoch [80/100], Train Loss: 0.008182, Val Loss: 0.016595
+Epoch [90/100], Train Loss: 0.008249, Val Loss: 0.016468
+Epoch [100/100], Train Loss: 0.008233, Val Loss: 0.016493
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.010269, Val Loss: 0.012354
+Epoch [20/100], Train Loss: 0.009035, Val Loss: 0.015134
+Epoch [30/100], Train Loss: 0.008898, Val Loss: 0.013688
+Epoch [40/100], Train Loss: 0.008599, Val Loss: 0.017050
+Epoch [50/100], Train Loss: 0.008560, Val Loss: 0.016560
+Epoch [60/100], Train Loss: 0.008374, Val Loss: 0.017036
+Epoch [70/100], Train Loss: 0.008636, Val Loss: 0.016640
+Epoch [80/100], Train Loss: 0.008423, Val Loss: 0.017105
+Epoch [90/100], Train Loss: 0.008332, Val Loss: 0.017024
+Epoch [100/100], Train Loss: 0.008617, Val Loss: 0.017042
+实际预测天数: 365
+短期预测 - MSE: 163932.9062, MAE: 334.2976
+长期预测 - MSE: 144095.0312, MAE: 295.4326
+
+=== 实验 4/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009774, Val Loss: 0.013298
+Epoch [20/100], Train Loss: 0.009803, Val Loss: 0.017293
+Epoch [30/100], Train Loss: 0.008968, Val Loss: 0.015116
+Epoch [40/100], Train Loss: 0.008611, Val Loss: 0.015451
+Epoch [50/100], Train Loss: 0.008958, Val Loss: 0.015253
+Epoch [60/100], Train Loss: 0.008567, Val Loss: 0.015365
+Epoch [70/100], Train Loss: 0.008163, Val Loss: 0.015777
+Epoch [80/100], Train Loss: 0.008966, Val Loss: 0.015697
+Epoch [90/100], Train Loss: 0.008623, Val Loss: 0.015437
+Epoch [100/100], Train Loss: 0.008559, Val Loss: 0.015428
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009682, Val Loss: 0.011986
+Epoch [20/100], Train Loss: 0.008847, Val Loss: 0.013959
+Epoch [30/100], Train Loss: 0.008658, Val Loss: 0.014629
+Epoch [40/100], Train Loss: 0.008408, Val Loss: 0.015817
+Epoch [50/100], Train Loss: 0.008596, Val Loss: 0.015880
+Epoch [60/100], Train Loss: 0.008134, Val Loss: 0.016813
+Epoch [70/100], Train Loss: 0.008252, Val Loss: 0.016218
+Epoch [80/100], Train Loss: 0.008286, Val Loss: 0.016341
+Epoch [90/100], Train Loss: 0.008168, Val Loss: 0.016364
+Epoch [100/100], Train Loss: 0.008477, Val Loss: 0.016278
+实际预测天数: 365
+短期预测 - MSE: 150736.4844, MAE: 314.3969
+长期预测 - MSE: 140758.7969, MAE: 292.4140
+
+=== 实验 5/5 ===
+训练短期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.009556, Val Loss: 0.011928
+Epoch [20/100], Train Loss: 0.008722, Val Loss: 0.015611
+Epoch [30/100], Train Loss: 0.008582, Val Loss: 0.016701
+Epoch [40/100], Train Loss: 0.008542, Val Loss: 0.017264
+Epoch [50/100], Train Loss: 0.008163, Val Loss: 0.016779
+Epoch [60/100], Train Loss: 0.008061, Val Loss: 0.016347
+Epoch [70/100], Train Loss: 0.007894, Val Loss: 0.016926
+Epoch [80/100], Train Loss: 0.007752, Val Loss: 0.016556
+Epoch [90/100], Train Loss: 0.007896, Val Loss: 0.016653
+Epoch [100/100], Train Loss: 0.008461, Val Loss: 0.016716
+实际预测天数: 90
+训练长期预测模型...
+
+开始训练模型 (序列长度: 50, 隐藏层: 128, 训练轮数: 100)
+训练样本数量: 621
+验证样本数量: 25
+Epoch [10/100], Train Loss: 0.010337, Val Loss: 0.017532
+Epoch [20/100], Train Loss: 0.009233, Val Loss: 0.014347
+Epoch [30/100], Train Loss: 0.009157, Val Loss: 0.015241
+Epoch [40/100], Train Loss: 0.009073, Val Loss: 0.012805
+Epoch [50/100], Train Loss: 0.008650, Val Loss: 0.015804
+Epoch [60/100], Train Loss: 0.008434, Val Loss: 0.015028
+Epoch [70/100], Train Loss: 0.008602, Val Loss: 0.015604
+Epoch [80/100], Train Loss: 0.008611, Val Loss: 0.015187
+Epoch [90/100], Train Loss: 0.008088, Val Loss: 0.015500
+Epoch [100/100], Train Loss: 0.008483, Val Loss: 0.015480
+实际预测天数: 365
+短期预测 - MSE: 167451.1562, MAE: 337.1679
+长期预测 - MSE: 139990.5781, MAE: 291.7335
+
+=== 实验结果汇总 ===
+
+短期预测结果:
+MSE: 164646.4219 ± 11414.2158
+MAE: 332.8458 ± 13.3608
+
+长期预测结果:
+MSE: 141736.9062 ± 1792.3982
+MAE: 293.8100 ± 2.2048
+
+实验完成！结果图片已保存为:
+- lstm_prediction_results_improved.png (预测结果对比图)
+- lstm_error_analysis_improved.png (误差分析图)
